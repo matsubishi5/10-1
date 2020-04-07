@@ -19,11 +19,11 @@
 
 # Learn more: http://github.com/javan/whenever
 
-env :PATH, ENV['PATH']
-set :output, 'log/cron.log'
-set :environment, :development
+env :PATH, ENV['PATH'] # 絶対パスから相対パス指定
+set :output, 'log/cron.log' # ログの出力先ファイルを設定
+set :environment, :development # 環境を設定
 
 
-every 1.minute do
-    runner "Book.create_test"
+every 1.day do
+    runner "DailyMailer.send_mail_users"
 end

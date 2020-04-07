@@ -24,8 +24,4 @@ class Book < ApplicationRecord
             Book.all
         end
     end
-
-    def self.create_test
-        Book.create(title: "test", body: "testtest")
-    end
 end
